@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import './assets/css/dist/tailwind.css'
 
 function App() {
   return (
     <div className="App">
-      <button>tourist project</button>
+      <button className="btn hover:bg-blue-500">tourist project</button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
