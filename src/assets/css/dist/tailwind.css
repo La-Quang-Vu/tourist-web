@@ -1,5 +1,5 @@
 /* 
-    npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
+    npx tailwindcss -i ./src/assets/css/src/tailwind.css -c ./src/assets/css/src/tailwind.config.js -o ./src/assets/css/dist/tailwind.css
 */
 
 /* 
@@ -6861,6 +6861,10 @@ video {
 .w-max {
   width: -webkit-max-content;
   width: max-content;
+}
+
+.w-90px {
+  width: 90px;
 }
 
 .min-w-0 {
@@ -38558,6 +38562,10 @@ video {
     width: max-content;
   }
 
+  .sm\:w-90px {
+    width: 90px;
+  }
+
   .sm\:min-w-0 {
     min-width: 0px;
   }
@@ -69765,6 +69773,10 @@ video {
   .md\:w-max {
     width: -webkit-max-content;
     width: max-content;
+  }
+
+  .md\:w-90px {
+    width: 90px;
   }
 
   .md\:min-w-0 {
@@ -100976,6 +100988,10 @@ video {
     width: max-content;
   }
 
+  .lg\:w-90px {
+    width: 90px;
+  }
+
   .lg\:min-w-0 {
     min-width: 0px;
   }
@@ -132185,6 +132201,10 @@ video {
     width: max-content;
   }
 
+  .xl\:w-90px {
+    width: 90px;
+  }
+
   .xl\:min-w-0 {
     min-width: 0px;
   }
@@ -163392,6 +163412,10 @@ video {
   .\32xl\:w-max {
     width: -webkit-max-content;
     width: max-content;
+  }
+
+  .\32xl\:w-90px {
+    width: 90px;
   }
 
   .\32xl\:min-w-0 {

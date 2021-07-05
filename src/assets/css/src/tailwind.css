@@ -1,5 +1,5 @@
 /* 
-    npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
+    npx tailwindcss -i ./src/assets/css/src/tailwind.css -c ./src/assets/css/src/tailwind.config.js -o ./src/assets/css/dist/tailwind.css
 */
 @tailwind base;
 @tailwind components;
