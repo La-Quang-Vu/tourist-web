@@ -7,10 +7,10 @@ function App() {
     <div className="">
       <header>
         <div className="border-b ">
-          <div className="lg-1200px:w-1170px md-992px:w-970px md:w-750px flex items-center mx-auto px-4">
-            <h1>
+          <div className="lg-1200px:w-1170px md-992px:w-970px md:w-750px h-50px flex justify-between mx-auto px-4">
+            <h1 className="flex items-center">
               <a href="">
-                <svg width="90px" height="47px" viewBox="0 0 120 47" version="1.1"
+                <svg width="100px" height="47px" viewBox="0 0 120 47" version="1.1"
                   className="md:w-90px"
                 >
                   <path id="XMLID_20_" d="M46.2,28.6 L46.2,19.6 L52.4,19.6 C52.4,17.4 50.6,15.9 48.5,15.9 L46.3,15.9 C46.3,11.4 42.3,11.5 42.3,11.5 L42.3,28.6 C42.3,33.5 45.7,36 52.4,36 L52.4,32 C49.9,32 48.2,31.7 47.3,31 C46.5,30.5 46.2,29.7 46.2,28.6" fill="#36353E"></path>
@@ -33,7 +33,7 @@ function App() {
                 </svg>
               </a>
             </h1>
-            <ul className="flex">
+            <ul className="flex items-center">
               <li className="px-2.5">
                 <a href="" className="flex items-center hover:underline">
                   <svg width="10" height="10" version="1.1" x="0px" y="0px" viewBox="0 0 511.999 511.999">
