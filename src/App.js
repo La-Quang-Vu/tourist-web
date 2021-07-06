@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import './assets/css/dist/tailwind.css'
+// import './assets/css/dist/tailwind.css'
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
                     </path>
                   </svg>
                   &nbsp;
-                  Tra cứu đơn hàng
+                  Manage your order
                 </a>
               </li>
               <li className="px-2.5">
@@ -56,6 +56,21 @@ function App() {
                   </svg>
                   <span className="ml-2 font-semibold" style={{color:'#ff8917'}}>096 326 6688</span>
                 </a>
+              </li>
+              <li className="px-2.5">
+                <div>
+                  <button className="flex items-center">
+                    <span>USD</span>
+                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      className="ml-1"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
+                    </svg>
+                  </button>
+                  <div>
+
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
