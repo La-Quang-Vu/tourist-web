@@ -2,11 +2,7 @@
 npx tailwindcss -i ./src/assets/css/src/tailwind.css -c ./src/assets/css/src/tailwind.config.js -o ./src/assets/css/dist/tailwind.css
 */
 module.exports = {
-    mode: 'jit',
-    purge: [
-        './public/**/*.html',
-        './src/**/*.{js,jsx,ts,tsx,vue}',
-    ],
+    purge: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
       extend: {
