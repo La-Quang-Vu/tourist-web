@@ -54,23 +54,45 @@ function App() {
                     <path d="M12.6907 8.55195C12.3859 8.55195 12.1389 8.30493 12.1389 8.00022C12.1363 5.71595 10.2852 3.86483 8.00095 3.86225C7.69624 3.86225 7.44922 3.61523 7.44922 3.31052C7.44922 3.00581 7.69624 2.75879 8.00095 2.75879C10.8944 2.76198 13.2392 5.10678 13.2424 8.00022C13.2424 8.30493 12.9954 8.55195 12.6907 8.55195Z" fill="#FF8917"></path>
                     <path d="M15.4493 8.55181C15.1446 8.55181 14.8976 8.3048 14.8976 8.00008C14.8933 4.19295 11.8081 1.10772 8.00095 1.10346C7.69624 1.10346 7.44922 0.856442 7.44922 0.55173C7.44922 0.247018 7.69624 0 8.00095 0C12.4173 0.00486512 15.9962 3.58378 16.001 8.00008C16.001 8.14641 15.9429 8.28675 15.8394 8.39021C15.736 8.49368 15.5956 8.55181 15.4493 8.55181Z" fill="#FF8917"></path>
                   </svg>
-                  <span className="ml-2 font-semibold" style={{color:'#ff8917'}}>096 326 6688</span>
+                  <span className="ml-2 text-[#ff8917] font-semibold">096 326 6688</span>
                 </a>
               </li>
               <li className="px-2.5">
-                <div>
+                <div className="relative">
                   <button className="flex items-center">
-                    <span>USD</span>
+                    <span className="hover:text-[#FF8962] font-semibold">USD</span>
                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
                       className="ml-1"
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
                     </svg>
                   </button>
-                  <div>
-
+                  <div className="absolute top-0 left-0 w-full rounded-md">
+                    <div className="absolute top-6 rounded-md">
+                      <div className="relative">
+                        <ul className="w-full whitespace-nowrap bg-white rounded-md shadow-md">
+                          <li className="">
+                            <button className=" px-4 py-2">
+                              <span className="mr-4 text-[#389e0d] font-semibold">VND</span>
+                              <span>Việt Nam đồng</span>
+                            </button>
+                          </li>
+                          <li className="bg-[#fff7e6] rounded-b-md">
+                              <button className="px-4 py-2">
+                                <span className="mr-4 text-[#389e0d] font-semibold">USD</span>
+                                <span className="text-[#ff8917]">US Dollar</span>
+                              </button>
+                          </li>
+                         
+                        </ul>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
+              </li>
+              <li className="px-2.5">
+                Tiếng Việt
               </li>
             </ul>
           </div>
