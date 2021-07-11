@@ -7,6 +7,7 @@ function App() {
 
   const [money,setMoney] = useState("USD")
   const [moneyMenu,setMoneyMenu] = useState(false)
+  const [moneyArea,setMoneyArea] = useState(false)
 
 
   return (
@@ -64,9 +65,12 @@ function App() {
                 </a>
               </li>
               <li className="px-2.5">
-                <div className="relative">
+                <div className="relative"
+                  onMouseLeave={()=>setMoneyArea(false)}
+                >
                   <button className="flex items-center hover:text-[#FF8962]"
-                    onClick={()=>setMoneyMenu(!moneyMenu)}
+                    onClick={()=>{setMoneyMenu(!moneyMenu); setMoneyArea(true)}}
+                    onBlur={()=>{if (!moneyArea) setMoneyMenu(false)}}
                   >
                     <span className="font-semibold">{money}</span>
                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
