@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-// import './assets/css/dist/tailwind.css'
+import './assets/css/dist/tailwind.css';
+import React, {useState} from 'react';
 
 function App() {
+
+  const [money,setMoney] = useState("USD")
+  const [moneyMenu,setMoneyMenu] = useState(false)
+
+
   return (
     <div className="">
       <header>
@@ -59,31 +65,36 @@ function App() {
               </li>
               <li className="px-2.5">
                 <div className="relative">
-                  <button className="flex items-center">
-                    <span className="hover:text-[#FF8962] font-semibold">USD</span>
+                  <button className="flex items-center hover:text-[#FF8962]"
+                    onClick={()=>setMoneyMenu(!moneyMenu)}
+                  >
+                    <span className="font-semibold">{money}</span>
                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
                       className="ml-1"
                     >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
                     </svg>
                   </button>
-                  <div className="absolute top-0 left-0 w-full rounded-md">
+                  <div className={`absolute top-0 left-0 w-full rounded-md ${moneyMenu?"block":"hidden"}`}>
                     <div className="absolute top-6 rounded-md">
-                      <div className="relative">
-                        <ul className="w-full whitespace-nowrap bg-white rounded-md shadow-md">
-                          <li className="">
-                            <button className=" px-4 py-2">
+                      <div className="">
+                        <ul className="w-full whitespace-nowrap bg-white rounded-md shadow-md2">
+                          <li className={`transition duration-300  ${money==='USD'?'hover:bg-[#f5f5f5]':'bg-[#fff7e6]'}`}>
+                            <button className=" px-4 py-2 mr-2"
+                              onClick={()=>{setMoney("VND");setMoneyMenu(false)}}
+                            >
                               <span className="mr-4 text-[#389e0d] font-semibold">VND</span>
                               <span>Việt Nam đồng</span>
                             </button>
                           </li>
-                          <li className="bg-[#fff7e6] rounded-b-md">
-                              <button className="px-4 py-2">
-                                <span className="mr-4 text-[#389e0d] font-semibold">USD</span>
-                                <span className="text-[#ff8917]">US Dollar</span>
-                              </button>
+                          <li className={`rounded-b-md ${money==='VND'?'hover:bg-[#f5f5f5]':'bg-[#fff7e6]'}`}>
+                            <button className="px-4 py-2 mr-2"
+                              onClick={()=>{setMoney("USD");setMoneyMenu(false)}}
+                            >
+                              <span className="mr-4 text-[#389e0d] font-semibold">USD</span>
+                              <span className="text-[#ff8917]">US Dollar</span>
+                            </button>
                           </li>
-                         
                         </ul>
                       </div>
                     </div>

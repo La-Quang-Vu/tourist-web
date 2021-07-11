@@ -11,7 +11,10 @@ module.exports = {
         'md-992px':'992px',
         'lg-1200px':'1200px',
       },
-    },
+      boxShadow: {
+        md2: '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
+      },
+    }, 
   },
   variants: {
     extend: {},
