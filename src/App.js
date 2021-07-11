@@ -79,7 +79,7 @@ function App() {
                     <div className="absolute top-6 rounded-md">
                       <div className="">
                         <ul className="w-full whitespace-nowrap bg-white rounded-md shadow-md2">
-                          <li className={`transition duration-300  ${money==='USD'?'hover:bg-[#f5f5f5]':'bg-[#fff7e6]'}`}>
+                          <li className={`transition duration-300 rounded-t-md ${money==='USD'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
                             <button className=" px-4 py-2 mr-2"
                               onClick={()=>{setMoney("VND");setMoneyMenu(false)}}
                             >
@@ -87,7 +87,7 @@ function App() {
                               <span>Việt Nam đồng</span>
                             </button>
                           </li>
-                          <li className={`rounded-b-md ${money==='VND'?'hover:bg-[#f5f5f5]':'bg-[#fff7e6]'}`}>
+                          <li className={`transition duration-300 rounded-b-md ${money==='VND'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
                             <button className="px-4 py-2 mr-2"
                               onClick={()=>{setMoney("USD");setMoneyMenu(false)}}
                             >
