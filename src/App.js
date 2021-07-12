@@ -9,6 +9,10 @@ function App() {
   const [moneyMenu,setMoneyMenu] = useState(false)
   const [moneyArea,setMoneyArea] = useState(false)
 
+  const [language,setLanguage] = useState("English")
+  const [languageMenu,setLanguageMenu] = useState(false)
+  const [languageArea,setLanguageArea] = useState(false)
+
 
   return (
     <div className="">
@@ -108,7 +112,138 @@ function App() {
                 </div>
               </li>
               <li className="px-2.5">
-                Tiếng Việt
+                <div className="relative"
+                  onMouseEnter={()=>setLanguageArea(true)}
+                  onMouseLeave={()=>setLanguageArea(false)}
+                >
+                  <button className="flex items-center hover:text-[#FF8962]"
+                    onClick={()=>setLanguageMenu(!languageMenu)}
+                    onBlur={()=>{if (!languageArea) setLanguageMenu(false)}}
+                  >
+                    {(language!=="English")&&<svg width="25" height="25" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512">
+                      <polygon points="196.641,85.337 0,85.337 0,426.663 196.641,426.663 512,426.663 512,85.337 "
+                          fill="#D80027"
+                      >
+                      </polygon>
+                      <polygon points="256,157.279 278.663,227.026 352,227.026 292.668,270.132 315.332,339.881 256,296.774
+                          196.668,339.881 219.332,270.132 160,227.026 233.337,227.026 "
+                          fill="#FFDA44"
+                      >
+                      </polygon>
+                    </svg>}
+                    {(language==="English")&&<svg width="25" height="25" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512">
+                      <polygon points="288,85.33 224,85.33 224,223.996 0,223.996 0,287.996 224,287.996 224,426.662 288,426.662
+                          288,287.996 512,287.996 512,223.996 288,223.996 "
+                          style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                      <polygon points="393.785,315.358 512,381.034 512,315.358 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="458.634,426.662 311.652,344.998 311.652,426.662 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "
+                        style={{fill:"rgb(240, 240, 240)"}}></polygon>
+                      <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "
+                        style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                      <polygon points="90.341,315.356 0,365.546 0,315.356 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="200.348,329.51 200.348,426.661 25.491,426.661 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="143.693,315.358 0,395.188 0,426.662 0,426.662 200.348,315.358 "
+                        style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                      <polygon points="118.215,196.634 0,130.958 0,196.634 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="53.366,85.33 200.348,166.994 200.348,85.33 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "
+                        style={{fill:"rgb(240, 240, 240)"}}></polygon>
+                      <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "
+                        style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                      <polygon points="421.659,196.636 512,146.446 512,196.636 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="311.652,182.482 311.652,85.331 486.509,85.331 	"
+                        style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                      <polygon points="368.307,196.634 512,116.804 512,85.33 512,85.33 311.652,196.634 "
+                        style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                    </svg>}
+                    
+                    <span className="font-semibold ml-[10px]">{language}</span>
+                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      className="ml-1"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
+                    </svg>
+                  </button>
+                  <div className="absolute top-0 left-0 w-full">
+                    <div className="absolute top-7 rounded-md">
+                      <div className={`transition-all duration-150 origin-top ${languageMenu?" visible scale-y-100 opacity-100":"invisible scale-y-0 opacity-0"}`}>
+                        <ul className="md:w-[185px] whitespace-nowrap bg-white rounded-md shadow-md2">
+                          <li className={`transition duration-300 rounded-t-md ${language==='English'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
+                            <button className="flex px-4 py-2 mr-2"
+                              onClick={()=>{setLanguage("Tiếng Việt");setLanguageMenu(false)}}
+                            >
+                              <svg width="25" height="25" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" >
+                                <polygon points="196.641,85.337 0,85.337 0,426.663 196.641,426.663 512,426.663 512,85.337 "
+                                  fill="#D80027"></polygon>
+                                <polygon points="256,157.279 278.663,227.026 352,227.026 292.668,270.132 315.332,339.881 256,296.774
+                                  196.668,339.881 219.332,270.132 160,227.026 233.337,227.026 "
+                                  fill="#FFDA44"></polygon>
+                              </svg>
+                              <span className={`ml-[15px] ${language==='English'?'':'text-[#ff8917]'}`}>Tiếng Việt</span>
+                            </button>
+                          </li>
+                          <li className={`transition duration-300 rounded-b-md ${language!=='English'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
+                            <button className="flex px-4 py-2 mr-2"
+                              onClick={()=>{setLanguage("English");setLanguageMenu(false)}}
+                            >
+                              <svg width="25" height="25" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512">
+                                <polygon points="288,85.33 224,85.33 224,223.996 0,223.996 0,287.996 224,287.996 224,426.662 288,426.662
+                                    288,287.996 512,287.996 512,223.996 288,223.996 "
+                                    style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                                <polygon points="393.785,315.358 512,381.034 512,315.358 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="458.634,426.662 311.652,344.998 311.652,426.662 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "
+                                  style={{fill:"rgb(240, 240, 240)"}}></polygon>
+                                <polygon points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "
+                                  style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                                <polygon points="90.341,315.356 0,365.546 0,315.356 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="200.348,329.51 200.348,426.661 25.491,426.661 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="143.693,315.358 0,395.188 0,426.662 0,426.662 200.348,315.358 "
+                                  style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                                <polygon points="118.215,196.634 0,130.958 0,196.634 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="53.366,85.33 200.348,166.994 200.348,85.33 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "
+                                  style={{fill:"rgb(240, 240, 240)"}}></polygon>
+                                <polygon points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "
+                                  style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                                <polygon points="421.659,196.636 512,146.446 512,196.636 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="311.652,182.482 311.652,85.331 486.509,85.331 	"
+                                  style={{fill:"rgb(0, 82, 180)"}}></polygon>
+                                <polygon points="368.307,196.634 512,116.804 512,85.33 512,85.33 311.652,196.634 "
+                                  style={{fill:"rgb(216, 0, 39)"}}></polygon>
+                              </svg>
+                              <span className={`ml-[15px] ${language==='English'?'text-[#ff8917]':''}`}>English</span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
