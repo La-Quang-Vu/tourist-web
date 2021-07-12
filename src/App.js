@@ -245,6 +245,16 @@ function App() {
                   </div>
                 </div>
               </li>
+              <li className="pl-2.5">
+                <div className="block">
+                  <button className="border border-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-[#ff8917] font-semibold text-sm">
+                    <span>Sign In</span>
+                  </button>
+                  <button className="border border-[#ff8917] bg-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-white font-semibold text-sm">
+                    <span>Sign Up</span>
+                  </button>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
