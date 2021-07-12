@@ -66,10 +66,11 @@ function App() {
               </li>
               <li className="px-2.5">
                 <div className="relative"
+                  onMouseEnter={()=>setMoneyArea(true)}
                   onMouseLeave={()=>setMoneyArea(false)}
                 >
                   <button className="flex items-center hover:text-[#FF8962]"
-                    onClick={()=>{setMoneyMenu(!moneyMenu); setMoneyArea(true)}}
+                    onClick={()=>setMoneyMenu(!moneyMenu)}
                     onBlur={()=>{if (!moneyArea) setMoneyMenu(false)}}
                   >
                     <span className="font-semibold">{money}</span>
@@ -79,16 +80,16 @@ function App() {
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
                     </svg>
                   </button>
-                  <div className={`absolute top-0 left-0 w-full rounded-md ${moneyMenu?"block":"hidden"}`}>
-                    <div className="absolute top-6 rounded-md">
-                      <div className="">
+                  <div className="absolute top-0 left-0 w-full">
+                    <div className="absolute top-7 rounded-md">
+                      <div className={`transition-all duration-150 origin-top ${moneyMenu?" visible scale-y-100 opacity-100":"invisible scale-y-0 opacity-0"}`}>
                         <ul className="w-full whitespace-nowrap bg-white rounded-md shadow-md2">
                           <li className={`transition duration-300 rounded-t-md ${money==='USD'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
                             <button className=" px-4 py-2 mr-2"
                               onClick={()=>{setMoney("VND");setMoneyMenu(false)}}
                             >
                               <span className="mr-4 text-[#389e0d] font-semibold">VND</span>
-                              <span>Việt Nam đồng</span>
+                              <span className={`${money==='VND'?'text-[#ff8917]':''}`}>Việt Nam đồng</span>
                             </button>
                           </li>
                           <li className={`transition duration-300 rounded-b-md ${money==='VND'?'hover:bg-[#f5f5f5]' : 'bg-[#fff7e6]'}`}>
@@ -96,7 +97,7 @@ function App() {
                               onClick={()=>{setMoney("USD");setMoneyMenu(false)}}
                             >
                               <span className="mr-4 text-[#389e0d] font-semibold">USD</span>
-                              <span className="text-[#ff8917]">US Dollar</span>
+                              <span className={`${money==='USD'?'text-[#ff8917]':''}`}>US Dollar</span>
                             </button>
                           </li>
                         </ul>
