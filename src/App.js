@@ -14,6 +14,7 @@ function App() {
   const [languageArea,setLanguageArea] = useState(false)
 
   const [menuMobile,setMenuMobile] = useState(false)
+  const [animMenuMobile,setAnimMenuMobile] = useState(false)
 
 
   return (
@@ -356,7 +357,7 @@ function App() {
         <div className="md-992px:hidden">
           <div className=" h-[60px] px-[15px] flex justify-between items-center">
             <div className="">
-              <button onClick={()=>setMenuMobile(true)}>
+              <button onClick={()=>{setMenuMobile(true);setAnimMenuMobile(true)}}>
                 <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.553711 2.29102C0.47168 2.19531 0.410156 2.09961 0.369141 2.00391C0.328125 1.89453 0.307617 1.77148 0.307617 1.63477C0.307617 1.51172 0.328125 1.39551 0.369141 1.28613C0.410156 1.17676 0.47168 1.08105 0.553711 0.999023C0.635742 0.916992 0.731445 0.855469 0.84082 0.814453C0.950195 0.773438 1.06641 0.75293 1.18945 0.75293H19.9131C20.0361 0.75293 20.1523 0.773438 20.2617 0.814453C20.3711 0.855469 20.4668 0.916992 20.5488 0.999023C20.6309 1.08105 20.6924 1.17676 20.7334 1.28613C20.7744 1.39551 20.7949 1.51172 20.7949 1.63477C20.7949 1.77148 20.7744 1.89453 20.7334 2.00391C20.6924 2.09961 20.6309 2.19531 20.5488 2.29102C20.4668 2.37305 20.3711 2.43457 20.2617 2.47559C20.1523 2.5166 20.0361 2.53711 19.9131 2.53711H1.18945C1.06641 2.53711 0.950195 2.5166 0.84082 2.47559C0.731445 2.43457 0.635742 2.37305 0.553711 2.29102ZM20.5488 8.13574C20.6309 8.21777 20.6924 8.31348 20.7334 8.42285C20.7744 8.53223 20.7949 8.64844 20.7949 8.77148C20.7949 8.89453 20.7744 9.01074 20.7334 9.12012C20.6924 9.22949 20.6309 9.3252 20.5488 9.40723C20.4668 9.48926 20.3711 9.55078 20.2617 9.5918C20.1523 9.63281 20.0361 9.65332 19.9131 9.65332H1.18945C1.06641 9.65332 0.950195 9.63281 0.84082 9.5918C0.731445 9.55078 0.635742 9.48926 0.553711 9.40723C0.47168 9.3252 0.410156 9.22949 0.369141 9.12012C0.328125 9.01074 0.307617 8.89453 0.307617 8.77148C0.307617 8.64844 0.328125 8.53223 0.369141 8.42285C0.410156 8.31348 0.47168 8.21777 0.553711 8.13574C0.635742 8.05371 0.731445 7.99219 0.84082 7.95117C0.950195 7.91016 1.06641 7.88965 1.18945 7.88965H19.9131C20.0361 7.88965 20.1523 7.91016 20.2617 7.95117C20.3711 7.99219 20.4668 8.05371 20.5488 8.13574ZM20.5488 15.252C20.6309 15.334 20.6924 15.4297 20.7334 15.5391C20.7744 15.6484 20.7949 15.7646 20.7949 15.8877C20.7949 16.0244 20.7744 16.1475 20.7334 16.2568C20.6924 16.3525 20.6309 16.4482 20.5488 16.5439C20.4668 16.626 20.3711 16.6875 20.2617 16.7285C20.1523 16.7695 20.0361 16.79 19.9131 16.79H1.18945C1.06641 16.79 0.950195 16.7695 0.84082 16.7285C0.731445 16.6875 0.635742 16.626 0.553711 16.5439C0.47168 16.4482 0.410156 16.3525 0.369141 16.2568C0.328125 16.1475 0.307617 16.0244 0.307617 15.8877C0.307617 15.7646 0.328125 15.6484 0.369141 15.5391C0.410156 15.4297 0.47168 15.334 0.553711 15.252C0.635742 15.1699 0.731445 15.1084 0.84082 15.0674C0.950195 15.0264 1.06641 15.0059 1.18945 15.0059H19.9131C20.0361 15.0059 20.1523 15.0264 20.2617 15.0674C20.3711 15.1084 20.4668 15.1699 20.5488 15.252Z" fill="#36353E"></path>
                 </svg>
               </button>
@@ -391,8 +392,10 @@ function App() {
               </svg>
             </a>
           </div>
-          <div className={` fixed top-0 bottom-0 left-0 z-[99] ${menuMobile?'right-0' : 'right-full'} transition-all duration-300 ease-in-out`}>
-            <div className=" h-full overflow-x-hidden overflow-y-auto bg-white w-100per-50px">
+          <div className={` fixed top-0 bottom-0 left-0 z-[99] ${menuMobile?'right-0' : 'right-full'}`}>
+            <div className={` h-full overflow-x-hidden overflow-y-auto bg-white  ${animMenuMobile?'w-100per-50px' : 'w-0'} transition-all duration-300 ease-in-out`}
+              onTransitionEnd={()=>setMenuMobile(animMenuMobile)}
+            >
               <div id="menuMobile_header" className="flex items-center p-[15px] border-b-[6px] border-[#eee]">
                 <div className=" w-[50px] h-[50px] rounded-[50%] overflow-hidden">
                   <img src="https://statics.vntrip.vn/images/default-avatar.png" alt="avatar"></img>
@@ -409,11 +412,12 @@ function App() {
               <div id="menuMobile-body">
 
               </div>
-              <div id="menuMobile-backdrop" tabIndex="0"
-                className="absolute w-full h-full top-0 left-0 opacity-100 bg-black bg-opacity-70 z-[-1]"
-                onClick={()=>setMenuMobile(false)}
-                ></div>
+
             </div>
+            <div id="menuMobile-backdrop" tabIndex="0"
+                className={`absolute w-full h-full top-0 left-0 opacity-100 bg-black z-[-1] ${animMenuMobile?'bg-opacity-70' : 'bg-opacity-0'} transition-all duration-300 ease-in-out`}
+                onClick={()=>setAnimMenuMobile(false)}
+            ></div>
             <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
