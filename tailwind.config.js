@@ -16,7 +16,10 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'homeBannerV2': "url(https://statics.vntrip.vn/images/homeBannerV2.jpg)",
-       }),
+      }),
+      width: {
+        '100per-50px': 'calc(100% - 50px)',
+      }
     },
   },
   variants: {
