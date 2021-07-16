@@ -719,6 +719,8 @@ function App() {
                             <path d="M20.125 27.5088C14.6216 31.8807 8.49275 34.1291 2.73919 34.254C-1.5135 27.0091 -0.637915 9.39652 4.36521 4.27513C8.86801 -0.346602 23.0018 -1.22103 31.1319 1.65194C33.1331 9.89618 29.0056 20.3887 20.125 27.5088Z" fill="#FF4D4F"></path>
                             <rect x="4.97363" y="5" width="30" height="30" fill="url(#pattern0)"></rect>
                             <defs>
+                              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlinkHref="#image0" transform="translate(-0.0008) scale(0.0016)"></use></pattern>
+                              <image id="image0" width="626" height="625" href="./assets/images/price1.png"></image>
                             </defs>
                           </svg>
                         </div>
