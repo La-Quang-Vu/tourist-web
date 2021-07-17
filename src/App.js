@@ -20,6 +20,9 @@ function App() {
   const [menuMobile,setMenuMobile] = useState(false)
   const [animMenuMobile,setAnimMenuMobile] = useState(false)
 
+  const [hotelButtonHover,setHotelButtonHover] = useState(false)
+  const [flightButtonHover,setFlightsButtonHover] = useState(false)
+
 
   return (
     <div className="">
@@ -692,37 +695,43 @@ function App() {
                 </button>
               </li>
               <li className="mr-3 w-[104px] h-16">
-                <button className="bg-[#eee] w-full h-full p-[5px] text-center flex flex-col justify-center items-center rounded-t-lg">
+                <button className="bg-[#eee] w-full h-full p-[5px] text-center flex flex-col justify-center items-center rounded-t-lg"
+                  onMouseEnter={()=>setHotelButtonHover(true)}
+                  onMouseLeave={()=>setHotelButtonHover(false)}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><g clip-path="url(#clip0)">
                     <path d="M13.53 1.87022L2.54 0.200225C2.03 0.120225 1.51 0.260225 1.12 0.590224C0.73 0.930224 0.5 1.42022 0.5 1.93022V23.0002C0.5 23.5502 0.95 24.0002 1.5 24.0002H4.75V18.7502C4.75 17.7802 5.53 17.0002 6.5 17.0002H9C9.97 17.0002 10.75 17.7802 10.75 18.7502V24.0002H15V3.60022C15 2.74022 14.38 2.01022 13.53 1.87022ZM6 14.7502H4.5C4.086 14.7502 3.75 14.4142 3.75 14.0002C3.75 13.5862 4.086 13.2502 4.5 13.2502H6C6.414 13.2502 6.75 13.5862 6.75 14.0002C6.75 14.4142 6.414 14.7502 6 14.7502ZM6 11.7502H4.5C4.086 11.7502 3.75 11.4142 3.75 11.0002C3.75 10.5862 4.086 10.2502 4.5 10.2502H6C6.414 10.2502 6.75 10.5862 6.75 11.0002C6.75 11.4142 6.414 11.7502 6 11.7502ZM6 8.75022H4.5C4.086 8.75022 3.75 8.41422 3.75 8.00022C3.75 7.58622 4.086 7.25022 4.5 7.25022H6C6.414 7.25022 6.75 7.58622 6.75 8.00022C6.75 8.41422 6.414 8.75022 6 8.75022ZM6 5.75022H4.5C4.086 5.75022 3.75 5.41422 3.75 5.00022C3.75 4.58622 4.086 4.25022 4.5 4.25022H6C6.414 4.25022 6.75 4.58622 6.75 5.00022C6.75 5.41422 6.414 5.75022 6 5.75022ZM11 14.7502H9.5C9.086 14.7502 8.75 14.4142 8.75 14.0002C8.75 13.5862 9.086 13.2502 9.5 13.2502H11C11.414 13.2502 11.75 13.5862 11.75 14.0002C11.75 14.4142 11.414 14.7502 11 14.7502ZM11 11.7502H9.5C9.086 11.7502 8.75 11.4142 8.75 11.0002C8.75 10.5862 9.086 10.2502 9.5 10.2502H11C11.414 10.2502 11.75 10.5862 11.75 11.0002C11.75 11.4142 11.414 11.7502 11 11.7502ZM11 8.75022H9.5C9.086 8.75022 8.75 8.41422 8.75 8.00022C8.75 7.58622 9.086 7.25022 9.5 7.25022H11C11.414 7.25022 11.75 7.58622 11.75 8.00022C11.75 8.41422 11.414 8.75022 11 8.75022ZM11 5.75022H9.5C9.086 5.75022 8.75 5.41422 8.75 5.00022C8.75 4.58622 9.086 4.25022 9.5 4.25022H11C11.414 4.25022 11.75 4.58622 11.75 5.00022C11.75 5.41422 11.414 5.75022 11 5.75022Z" 
-                      fill="#8C8C8C"></path>
+                      className={`${hotelButtonHover?'fill-[#ff8917]' : 'fill-[#8C8C8C]'}`}></path>
                     <path d="M23.12 10.8421L16 9.35107V24.0001H22.75C23.715 24.0001 24.5 23.2151 24.5 22.2501V12.5521C24.5 11.7261 23.937 11.0231 23.12 10.8421ZM20.75 21.0001H19.25C18.836 21.0001 18.5 20.6641 18.5 20.2501C18.5 19.8361 18.836 19.5001 19.25 19.5001H20.75C21.164 19.5001 21.5 19.8361 21.5 20.2501C21.5 20.6641 21.164 21.0001 20.75 21.0001ZM20.75 18.0001H19.25C18.836 18.0001 18.5 17.6641 18.5 17.2501C18.5 16.8361 18.836 16.5001 19.25 16.5001H20.75C21.164 16.5001 21.5 16.8361 21.5 17.2501C21.5 17.6641 21.164 18.0001 20.75 18.0001ZM20.75 15.0001H19.25C18.836 15.0001 18.5 14.6641 18.5 14.2501C18.5 13.8361 18.836 13.5001 19.25 13.5001H20.75C21.164 13.5001 21.5 13.8361 21.5 14.2501C21.5 14.6641 21.164 15.0001 20.75 15.0001Z" 
-                      fill="#BFBFBF"></path></g><defs><clipPath id="clip0"><rect width="24" height="24" fill="white" transform="translate(0.5)"></rect></clipPath></defs></svg>
-                  <span className="text-[#595959] hover:text-[#ff8917]">Hotel</span>
+                      className={`${hotelButtonHover?'fill-[#ff8917]' : 'fill-[#BFBFBF]'}`}></path></g><defs><clipPath id="clip0"><rect width="24" height="24" fill="white" transform="translate(0.5)"></rect></clipPath></defs></svg>
+                  <span className={`${hotelButtonHover?'text-[#ff8917]':'text-[#595959]'}`}>Hotel</span>
                 </button>
               </li>
               <li className="mr-3 w-[104px] h-16">
-                <button className="bg-[#eee] w-full h-full p-[5px] text-center flex flex-col justify-center items-center rounded-t-lg">
+                <button className="bg-[#eee] w-full h-full p-[5px] text-center flex flex-col justify-center items-center rounded-t-lg"
+                  onMouseEnter={()=>setFlightsButtonHover(true)}
+                  onMouseLeave={()=>setFlightsButtonHover(false)}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
                     <path d="M26.1397 0.0028331C24.3377 0.062985 22.1897 1.1443 20.8891 2.64618L18.5262 5.38558L12.2922 7.27923L13.0965 11.7177L8.14259 17.5503L2.8033 16.493C2.51691 16.445 2.24245 16.529 2.03954 16.7333L0.846221 17.9348C0.667277 18.115 0.571758 18.3794 0.607535 18.6317C0.631443 18.8961 0.786536 19.1243 1.0133 19.2565L6.90151 22.7649L10.386 28.5803C10.434 28.7257 10.6797 28.9475 11.0065 28.9888C11.2571 29.0248 11.5197 28.9287 11.6986 28.7485L12.8919 27.547C13.0949 27.3427 13.1783 27.0663 13.1307 26.778L12.0805 21.5153L17.7743 16.4276L22.2743 17.1585L24.0513 10.9727L26.784 8.58162C28.2518 7.29605 29.3258 5.13325 29.3974 3.307C29.469 1.24037 28.1444 -0.0692699 26.1397 0.0028331ZM14.9358 6.16512L17.2374 3.84774C17.5672 3.51566 17.5672 2.97826 17.2374 2.64623C16.9076 2.31415 16.3738 2.31415 16.0441 2.64623L13.7425 4.96361C13.4127 5.29569 13.4127 5.83309 13.7425 6.16512C14.0723 6.49714 14.6061 6.49714 14.9358 6.16512ZM24.4825 15.7772L26.784 13.4599C27.1139 13.1278 27.1139 12.5904 26.784 12.2584C26.4542 11.9263 25.9205 11.9263 25.5907 12.2584L23.2891 14.5757C22.9593 14.9078 22.9593 15.4452 23.2891 15.7772C23.6189 16.1093 24.1526 16.1093 24.4825 15.7772ZM10.8449 5.47807L13.0608 3.2469C13.3906 2.91482 13.3906 2.37742 13.0608 2.04539C12.731 1.71331 12.1973 1.71331 11.8675 2.04539L9.6516 4.27656C9.32179 4.60865 9.32179 5.14605 9.6516 5.47807C9.98131 5.81015 10.515 5.81015 10.8449 5.47807ZM26.1874 16.4637L23.9715 18.6948C23.6416 19.0269 23.6416 19.5643 23.9715 19.8964C24.3013 20.2284 24.835 20.2284 25.1648 19.8964L27.3807 17.6652C27.7105 17.3331 27.7105 16.7957 27.3807 16.4637C27.0509 16.1316 26.5172 16.1316 26.1874 16.4637Z" 
-                      fill="#BFBFBF"></path>
+                      className={`${flightButtonHover?'fill-[#ff8917]' : 'fill-[#BFBFBF]'}`}></path>
                     <path d="M4.21464 3.00208C3.94514 2.96697 3.67575 3.04889 3.48825 3.23632L2.31669 4.4074C2.12931 4.59477 2.04724 4.84071 2.08242 5.11C2.10578 5.29737 2.18779 5.44969 2.31669 5.57848C2.46365 5.72538 2.03951 5.45018 12.8955 11.4925L18.226 5.32078L4.21464 3.00208ZM25.9814 24.7609L23.6501 10.7665L17.4879 16.0833C23.5444 26.9567 23.2593 26.5134 23.4041 26.6582C23.5329 26.787 23.6853 26.8689 23.8727 26.8924C24.1422 26.9275 24.3882 26.8455 24.5756 26.6582L25.7471 25.4871C25.9346 25.2997 26.0166 25.0303 25.9814 24.7609Z" 
-                      fill="#D9D9D9"></path>
+                      className={`${flightButtonHover?'fill-[#ff8917]' : 'fill-[#D9D9D9]'}`}></path>
                     <path d="M25.8317 4.31421L24.6602 5.4853C24.3365 5.80897 23.8125 5.80897 23.4887 5.4853C23.1649 5.16168 23.1649 4.63788 23.4887 4.31421L24.6602 3.14312C24.984 2.81945 25.5079 2.81951 25.8317 3.14312C26.1555 3.46674 26.1555 3.99054 25.8317 4.31421Z" 
-                      fill="#BFBFBF"></path></svg>
-                  <span className="text-[#595959]">Flights</span>
+                      className={`${flightButtonHover?'fill-[#ff8917]' : 'fill-[#BFBFBF]'}`}></path></svg>
+                  <span className={`${flightButtonHover?'text-[#ff8917]':'text-[#595959]'}`}>Flights</span>
                 </button>
               </li>
             </ul>
             <div className=" rounded-b bg-white shadow-md2">
               <div className="md:px-[15px] md:pb-[30px] md:pt-5">
                 <div>
-                  <div>
+                  <div className="pb-4">
                     <p className="font-semibold mx-3 mb-3">
                       Please choose package type you need?
                     </p>
                     <div className="-mx-3 flex items-center">
-                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#ff8917] bg-[#fff7e6] w-1/3">
+                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#ff8917] bg-[#fff7e6] w-1/3 cursor-pointer">
                         <div className="flex items-center">
                           <div className="w-10 mr-[10px]">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -747,7 +756,7 @@ function App() {
                           </div>
                         </div>
                       </div>
-                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3">
+                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3 cursor-pointer">
                         <div className="flex items-center">
                           <div className="w-10 mr-[10px]">
                             <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -779,7 +788,7 @@ function App() {
                           </div>
                         </div>
                       </div>
-                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3">
+                      <div className=" md-992px:mx-3 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3 cursor-pointer">
                         <div className="flex items-center">
                           <div className="w-10 mr-[10px]">
                             <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -812,6 +821,30 @@ function App() {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="mb-4 -mx-3 flex items-center">
+                      <div className="md-992px:mx-3 w-1/3">
+                        <p className="mb-[5px] font-semibold">
+                        Select your departure?
+                        </p>
+                        <div>
+                          <div>
+                            <input className="relative pr-[35px] border border-[#d9d9d9] rounded"
+                              placeholder="Departure"
+                            >
+                              {/* <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                className="absolute right-[15px] top-1/2 z-[1]"
+                              ><path d="M13.2125 12.3516L9.15469 8.29375C9.78438 7.47969 10.125 6.48438 10.125 5.4375C10.125 4.18438 9.63594 3.00937 8.75156 2.12344C7.86719 1.2375 6.68906 0.75 5.4375 0.75C4.18594 0.75 3.00781 1.23906 2.12344 2.12344C1.2375 3.00781 0.75 4.18438 0.75 5.4375C0.75 6.68906 1.23906 7.86719 2.12344 8.75156C3.00781 9.6375 4.18438 10.125 5.4375 10.125C6.48438 10.125 7.47813 9.78438 8.29219 9.15625L12.35 13.2125C12.3619 13.2244 12.376 13.2338 12.3916 13.2403C12.4071 13.2467 12.4238 13.2501 12.4406 13.2501C12.4575 13.2501 12.4741 13.2467 12.4897 13.2403C12.5052 13.2338 12.5194 13.2244 12.5312 13.2125L13.2125 12.5328C13.2244 12.5209 13.2338 12.5068 13.2403 12.4912C13.2467 12.4757 13.2501 12.459 13.2501 12.4422C13.2501 12.4254 13.2467 12.4087 13.2403 12.3931C13.2338 12.3776 13.2244 12.3635 13.2125 12.3516ZM7.9125 7.9125C7.25 8.57344 6.37187 8.9375 5.4375 8.9375C4.50312 8.9375 3.625 8.57344 2.9625 7.9125C2.30156 7.25 1.9375 6.37187 1.9375 5.4375C1.9375 4.50312 2.30156 3.62344 2.9625 2.9625C3.625 2.30156 4.50312 1.9375 5.4375 1.9375C6.37187 1.9375 7.25156 2.3 7.9125 2.9625C8.57344 3.625 8.9375 4.50312 8.9375 5.4375C8.9375 6.37187 8.57344 7.25156 7.9125 7.9125Z" fill="#8C8C8C"></path>
+                              </svg> */}
+                            </input>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                    How long is your trip?
                     </div>
                   </div>
                   <br />
