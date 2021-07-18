@@ -19,6 +19,15 @@ module.exports = {
       }),
       width: {
         '100per-50px': 'calc(100% - 50px)',
+      },
+      keyframes: {
+        opacityShow: {
+          from: {opacity:0},
+          to: {opacity:1}
+        }
+      },
+      animation: {
+        opacityShow: 'opacityShow .3s ease 1',
       }
     },
   },
