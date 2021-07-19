@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 // import './App.css';
 import './assets/css/dist/tailwind.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 function App() {
 
@@ -25,6 +25,22 @@ function App() {
 
   const [suggestDefault,setSuggestDefault] = useState(false)
 
+  function checkClickEvent () {
+    const concernedElement = document.querySelector(".click-departure");
+
+    document.addEventListener("mousedown", (event) => {
+      if (concernedElement.contains(event.target)) {
+        console.log("Clicked Inside");
+      } else {
+        console.log("Clicked Outside / Elsewhere");
+        setSuggestDefault(false);
+      }
+    });
+  }
+
+  useEffect(()=>{
+    checkClickEvent();
+  },[])
 
   return (
     <div className="">
@@ -831,12 +847,11 @@ function App() {
                         <p className="mb-[5px] font-semibold">
                         Select your departure?
                         </p>
-                        <div className="relative">
+                        <div className="relative" class="click-departure">
                           <div className="relative">
                             <input className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] transition-all duration-300 rounded outline-none"
                               placeholder="Departure"
                               onFocus={()=>setSuggestDefault(true)}
-                              onBlur={()=>setSuggestDefault(false)}
                             >
                             </input>
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
