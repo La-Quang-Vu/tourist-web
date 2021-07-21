@@ -13,6 +13,7 @@ module.exports = {
       },
       boxShadow: {
         md2: '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
+        input1: '0 0 0 2px #D1E9FF',
       },
       backgroundImage: theme => ({
         'homeBannerV2': "url(https://statics.vntrip.vn/images/homeBannerV2.jpg)",

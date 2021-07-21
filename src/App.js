@@ -849,7 +849,7 @@ function App() {
                         </p>
                         <div className="relative" class="click-departure">
                           <div className="relative">
-                            <input className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] transition-all duration-300 rounded outline-none"
+                            <input className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
                               placeholder="Departure"
                               onFocus={()=>setSuggestDefault(true)}
                             >
@@ -904,7 +904,7 @@ function App() {
                         </p>
                         <div>
                           <div className="relative">
-                            <input className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] transition-all duration-300 rounded outline-none"
+                            <input className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
                               placeholder="Destination"
                             >
                             </input>
@@ -921,7 +921,7 @@ function App() {
                         </p>
                         <div>
                           <div className="relative">
-                            <button className="w-full h-10 px-[5px] pl-[15px] pr-[30px] text-left border border-[#d9d9d9] hover:border-[#48ABFD] transition-all duration-300 rounded outline-none">
+                            <button className="w-full h-10 px-[5px] pl-[15px] pr-[30px] text-left border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1">
                               <span>2 adult, 0 children, 0 infant</span>
                               <svg width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.869 477.869" xmlSpace="preserve" class="svgArrow"
                                 className="absolute right-[15px] top-1/2 z-[1]" style={{transform:'translateY(-50%)'}}
