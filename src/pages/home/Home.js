@@ -11,6 +11,10 @@ const Home = () => {
   const [suggestDefaultR,setSuggestDefaultR] = useState(false)
   const [passengerBox,setPassengerBox] = useState(false)
 
+  const [adult,setAdult] = useState(2)
+  const [children,setChildren] = useState(0)
+  const [infant,setInfant] = useState(0)
+
   function checkClickEvent () {
     const concernedElement = document.querySelector(".click-departure");
     const concernedElementR = document.querySelector(".click-return");
@@ -362,7 +366,7 @@ const Home = () => {
                             <button className="w-full h-10 px-[5px] pl-[15px] pr-[30px] text-left border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
                               onClick={() => setPassengerBox(true)}
                             >
-                              <span>2 adult, 0 children, 0 infant</span>
+                              <span>{adult} adult, {children} children, {infant} infant</span>
                               <svg width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.869 477.869" xmlSpace="preserve" class="svgArrow"
                                 className="absolute right-[15px] top-1/2 z-[1]" style={{transform:'translateY(-50%)'}}
                               >
@@ -389,47 +393,55 @@ const Home = () => {
                             <div className={`absolute top-full left-0 z-10 w-full bg-white rounded py-[7.5px] shadow-md2 ${passengerBox?'block':'hidden'}`}>
                               <div>
                                 <div className="flex justify-between items-center py-[10px] px-[15px]">
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <button className="btn-passenger-action"
+                                    onClick={() => {setAdult(adult-1); 
+                                                    if (children >= adult) setChildren(children-1);
+                                                    if (infant >= adult) setInfant(infant-1)}}
+                                    {...((adult <= 2)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="minus" class="anticon anticon-minus"><svg viewBox="64 64 896 896" focusable="false" data-icon="minus" width="1em" height="1em" fill="inherit" aria-hidden="true"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></span>
                                   </button>
-                                  <p className="px-[15px] font-semibold">4 adult</p>
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <p className="px-[15px] font-semibold">{adult} adult</p>
+                                  <button className="btn-passenger-action"
+                                    onClick = {() => setAdult(adult+1)}
+                                    {...((adult >= 6)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="plus" class="anticon anticon-plus"><svg viewBox="64 64 896 896" focusable="false" data-icon="plus" width="1em" height="1em" fill="inherit" aria-hidden="true"><defs><style></style></defs><path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path><path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path></svg></span>
                                   </button>
                                 </div>
                                 <div className="flex justify-between items-center py-[10px] px-[15px]">
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <button className="btn-passenger-action"
+                                    onClick={() => setChildren(children-1)}
+                                    {...((children <= 0)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="minus" class="anticon anticon-minus"><svg viewBox="64 64 896 896" focusable="false" data-icon="minus" width="1em" height="1em" fill="inherit" aria-hidden="true"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></span>
                                   </button>
                                   <p className="px-[15px] font-semibold text-center">
-                                    0 trẻ em
+                                    {children} trẻ em
                                     <span className="text-sm font-normal text-[#868686] block">2 - 12 tuổi</span>
                                   </p>
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <button className="btn-passenger-action"
+                                    onClick={() => setChildren(children+1)}
+                                    {...((children >= adult)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="plus" class="anticon anticon-plus"><svg viewBox="64 64 896 896" focusable="false" data-icon="plus" width="1em" height="1em" fill="inherit" aria-hidden="true"><defs><style></style></defs><path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path><path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path></svg></span>
                                   </button>
                                 </div>
                                 <div className="flex justify-between items-center py-[10px] px-[15px]">
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <button className="btn-passenger-action"
+                                    onClick={() => setInfant(infant-1)}
+                                    {...((infant <= 0)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="minus" class="anticon anticon-minus"><svg viewBox="64 64 896 896" focusable="false" data-icon="minus" width="1em" height="1em" fill="inherit" aria-hidden="true"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></span>
                                   </button>
                                   <p className="px-[15px] font-semibold text-center">
-                                    0 infant
+                                    {infant} infant
                                     <span className="text-sm font-normal text-[#868686] block">&lt; 2 tuổi</span>
                                   </p>
-                                  <button className="h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
-                                    border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
-                                    fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]">
+                                  <button className="btn-passenger-action"
+                                    onClick={() => setInfant(infant+1)}
+                                    {...((infant >= adult)?{disabled:true}:{disabled:false})}
+                                  >
                                     <span role="img" aria-label="plus" class="anticon anticon-plus"><svg viewBox="64 64 896 896" focusable="false" data-icon="plus" width="1em" height="1em" fill="inherit" aria-hidden="true"><defs><style></style></defs><path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path><path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path></svg></span>
                                   </button>
                                 </div>

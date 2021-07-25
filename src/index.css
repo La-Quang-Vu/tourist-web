@@ -6,6 +6,13 @@
   .btn {
     @apply px-4 py-2 bg-blue-600 text-white rounded;
   }
+
+  .btn-passenger-action {
+    @apply h-10 px-[15px] transition-all duration-200 rounded w-[26px] inline-flex items-center justify-center 
+      border border-[#d9d9d9] border-transparent hover:border-[#ff8917] focus:border-[#ff8917] bg-[#eee] hover:bg-[rgba(0,0,0,.018)] focus:bg-[rgba(0,0,0,.018)] 
+      fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]
+      disabled:border-transparent disabled:bg-transparent disabled:fill-[rgba(0,0,0,.25)] disabled:cursor-not-allowed
+  }
 }
 
 body {
