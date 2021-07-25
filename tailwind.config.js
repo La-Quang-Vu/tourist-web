@@ -33,7 +33,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      divideColor: ['group-hover'],
+      textColor: ['group-hover'],
+    },
   },
   plugins: [],
 }
