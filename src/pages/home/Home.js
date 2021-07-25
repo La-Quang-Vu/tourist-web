@@ -4,6 +4,7 @@ import Header from './Header';
 import HomeBanner from './HomeBanner';
 import ReasonCombo from './ReasonCombo';
 import SearchBox from './SearchBox';
+import HotDeal from './HotDeal';
 
 const Home = () => {
 
@@ -14,7 +15,7 @@ const Home = () => {
         <HomeBanner />
         <SearchBox />
         <ReasonCombo />
-
+        <HotDeal />
         
       </main>
 

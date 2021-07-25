@@ -3,7 +3,7 @@ const ReasonCombo = () => {
   
   return (
     <div className="mt-[70px] mb-10">
-      <div className="lg-1200px:w-[1170px] md-992px:w-[970px] md:w-[750px] px-[15px] ml-auto mr-auto">
+      <div className="container2">
         <div className="mb-6 text-center">
           <p className="text-2xl font-semibold">
             Why should choose

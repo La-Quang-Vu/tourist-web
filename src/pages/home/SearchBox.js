@@ -50,7 +50,7 @@ const SearchBox = () => {
 
   return (
     <div id="searchBox" className="md:mt-[-100px] md:mb-10">
-      <div className="lg-1200px:w-[1170px] md-992px:w-[970px] md:w-[750px] px-[15px] ml-auto mr-auto">
+      <div className="container2">
         <ul className="mb-[15px] inline-flex md:w-[650px] m-auto">
           <li className="mr-3 w-[104px] h-16">
             <button className="bg-white text-[#ff8917] w-full h-full p-[5px] text-center flex flex-col justify-center items-center rounded-t-lg">
