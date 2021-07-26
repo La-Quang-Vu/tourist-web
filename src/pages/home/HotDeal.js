@@ -63,7 +63,7 @@ const HotDeal = () => {
                     />
                   </div>
                   <div className="md:p-[15px]">
-                    <p className="h-12 mb-[10px] font-bold overflow-hidden overflow-ellipsis">
+                    <p className="h-12 mb-[10px] font-bold overflow-hidden overflow-ellipsis ellipsis-multiline">
                       {item.title}
                     </p>
                     <div className="mb-[5px] flex">
