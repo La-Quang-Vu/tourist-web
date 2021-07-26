@@ -40,6 +40,8 @@ module.exports = {
     extend: {
       divideColor: ['group-hover'],
       textColor: ['group-hover'],
+      transitionDuration: ['group-hover'],
+      scale: ['group-hover'],
     },
   },
   plugins: [],
