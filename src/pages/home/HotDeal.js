@@ -83,7 +83,7 @@ const HotDeal = () => {
                       </span>
                     </div>)}
                     <div className="mt-[10px]">
-                      <span className=" text-xl2 text-[#ff8917] font-bold">
+                      <span className=" text-xl_26 text-[#ff8917] font-bold">
                         {item.price}
                       </span>
                     </div>
@@ -92,6 +92,13 @@ const HotDeal = () => {
               </div>
             )
           })}
+        </div>
+        <div className="text-center my-[15px]">
+          <a href="" className="px-[15px] min-h-[48px] inline-flex items-center border border-[#ff8917] bg-white rounded text-center text-[#ff8917] font-semibold">
+            <span className="">
+            Xem thêm các Deal hot nhất
+            </span>
+          </a>
         </div>
       </div>
     </div>
