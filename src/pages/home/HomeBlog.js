@@ -3,7 +3,7 @@ import HomeBlogCont from "./HomeBlogCont"
 
 const HomeBlog = () => {
 
-  const itemM = {
+  const festivalItemMain = {
     header: "Lễ hội - Festival",
     image: "../../assets/images/blog/festival/Ngay-cua-Cha-la-ngay-nao-2.jpg",
     title: "Ngày của cha năm 2021 là ngày nào: Nguồn gốc ý nghĩa, gợi ý lời chúc và quà tặng cho cha",
@@ -12,7 +12,7 @@ const HomeBlog = () => {
     desc: "Nội dung chínhNgày của Cha năm 2021 là ngày nào? Ngày của Cha ở Việt Nam và một số nước trên..."
   }
 
-  const itemCards = [
+  const festivalItemCards = [
     {
       image: "../../assets/images/blog/festival/ngay-gia-dinh-2.jpeg",
       title: "Ngày Gia Đình Việt Nam năm 2021 là ngày nào? Nên làm gì cho ý nghĩa?",
@@ -55,11 +55,65 @@ const HomeBlog = () => {
     }
   ]
 
+  const discoveryItemMain = {
+    header: "Khám phá",
+    image: "../../assets/images/blog/discovery/check-in-quan-cafe-ha-noi-sau-dich-5.jpeg",
+    title: "Những quán cafe “lột xác” ấn tượng chờ đón khách sau dịch ở Hà Nội",
+    date: "28/07/2021",
+    view: "4 view",
+    desc: "Thay vì đóng băng các hoạt động để phòng chống dịch Covid-19 thì một số quán Cafe tại Hà Nội..."
+  }
+
+  const discoveryItemCards = [
+    {
+      image: "../../assets/images/blog/discovery/4-diem-den-cho-chuyen-kham-pha-son-la1.jpeg",
+      title: "4 điểm đến cho chuyến khám phá Sơn La",
+      date: "27/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/nhung-cach-tuyet-voi-de-giai-chung-cuong-chan-cho-hoi-me-du-lich-dip-cach-ly6.jpeg",
+      title: "Những cách tuyệt vời để giải chứng “cuồng chân” cho hội mê du lịch dịp cách ly",
+      date: "27/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/cuc-phuong-1.jpg",
+      title: "Vườn Quốc gia Cúc Phương – Điểm đến của thiên nhiên và động vật hoang dã",
+      date: "27/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/anh2-1627122168.jpg",
+      title: "Những điểm tiêm vaccine Covid-19 độc đáo trên thế giới",
+      date: "26/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/nhung-farmstay-dep-7.jpg",
+      title: "Những khu du lịch Farmstay đẹp khắp Việt Nam",
+      date: "23/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/hangkia3-7382-1626867229.jpg",
+      title: "Một mình cắm trại đêm, ngắm dải ngân hà tại Hang Kia",
+      date: "23/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/nhung-dia-diem-du-lich-danh-cho-nguoi-thich-yen-tinh-21.jpg",
+      title: "Những điểm du lịch dành cho người thích yên tĩnh",
+      date: "21/07/2021"
+    },
+    {
+      image: "../../assets/images/blog/discovery/2-4573-1626688205.jpg",
+      title: "Google Maps bị chỉ trích vì dẫn khách theo đường nguy hiểm",
+      date: "20/07/2021"
+    }
+  ]
+
   return (
     <div className="mt-[50px]">
       <div className="container2">
 
-        <HomeBlogCont itemMain={itemM} itemList={itemCards}/>
+        <HomeBlogCont itemMain={festivalItemMain} itemList={festivalItemCards}/>
+
+        <HomeBlogCont itemMain={discoveryItemMain} itemList={discoveryItemCards}/>
         
       </div>
       
