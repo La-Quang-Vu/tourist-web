@@ -21,6 +21,7 @@ module.exports = {
       }),
       width: {
         '100per-50px': 'calc(100% - 50px)',
+        '100per-143px': 'calc(100% - 143px)',
       },
       keyframes: {
         opacityShow: {
