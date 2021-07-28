@@ -108,6 +108,58 @@ const HomeBlog = () => {
     }
   ]
 
+  const tipsItemMain = {
+    header: "Mẹo du lịch hay",
+    image: "../../assets/images/blog/tips/san-voucher-vinpearl-da-nang-5.jpeg",
+    title: "Bí kíp săn voucher Vinpearl Đà Nẵng siêu rẻ hè 2021",
+    date: "13/05/2021",
+    view: "362 view",
+    desc: "Không chỉ nổi tiếng với những bãi biển xanh trải dài cát trắng, Đà Nẵng còn được biết đến là..."
+  }
+
+  const tipsItemCards = [
+    {
+      image: "../../assets/images/blog/tips/plane-seats-economy-class-WIND-8218-9016-1618255660.jpg",
+      title: "Lý do không phải ghế máy bay nào cũng có cửa sổ",
+      date: "14/04/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/meo-chua-u-tai-khi-di-may-bay4.jpg",
+      title: "Mẹo chữa ù tai khi đi máy bay trong tích tắc",
+      date: "25/02/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/checkinmb.jpg",
+      title: "Cách check-in an toàn trong mùa dịch",
+      date: "02/02/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/san-ve-may-bay-tet-gia-re-voi-atadi6.png",
+      title: "7 bước săn vé máy bay Tết giá rẻ, siêu rẻ với Atadi",
+      date: "28/01/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/cach-thanh-toan-ve-may-bay-tren-atadi3.png",
+      title: "Cách thanh toán vé máy bay trên Atadi ",
+      date: "28/01/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/cong-cu-san-ve-may-bay-gia-re-atadi4.png",
+      title: "Tìm hiểu công cụ săn vé máy bay giá rẻ Atadi",
+      date: "28/01/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/huong-dan-cach-mua-ve-may-bay-tren-atadi1.png",
+      title: "Hướng dẫn cách mua vé máy bay trên Atadi nhanh chóng nhất",
+      date: "28/01/2021"
+    },
+    {
+      image: "../../assets/images/blog/tips/meo-san-ve-may-bay-gia-re-tet-nguyen-dan-tan-suu-20213.png",
+      title: "Mẹo săn vé máy bay giá rẻ tết Nguyên Đán Tân Sửu 2021",
+      date: "21/01/2021"
+    }
+  ]
+
   return (
     <div className="mt-[50px]">
       <div className="container2">
@@ -117,6 +169,8 @@ const HomeBlog = () => {
         <HomeBlogCont itemMain={discoveryItemMain} itemList={discoveryItemCards}/>
 
         <HomeBlogSafe />
+
+        <HomeBlogCont itemMain={tipsItemMain} itemList={tipsItemCards}/>
         
       </div>
       
