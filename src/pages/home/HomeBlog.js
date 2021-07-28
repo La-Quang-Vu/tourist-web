@@ -1,4 +1,5 @@
 import HomeBlogCont from "./HomeBlogCont"
+import HomeBlogSafe from "./HomeBlogSafe"
 
 
 const HomeBlog = () => {
@@ -114,6 +115,8 @@ const HomeBlog = () => {
         <HomeBlogCont itemMain={festivalItemMain} itemList={festivalItemCards}/>
 
         <HomeBlogCont itemMain={discoveryItemMain} itemList={discoveryItemCards}/>
+
+        <HomeBlogSafe />
         
       </div>
       
