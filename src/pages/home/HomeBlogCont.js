@@ -44,10 +44,10 @@ const HomeBlogCont = (props) => {
       </div>
       <div className="lg-1200px:w-2/3 md:w-full px-[15px]">
         <div className="pt-12 relative">
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap -mx-2">
             {props.itemList.map((item) => {
               return (
-                <div className="pr-[15px] pb-4 w-1/2 flex">
+                <div className="px-2 pb-4 w-full md:w-1/2 flex">
                   <div className="w-[135px] h-[85px] rounded overflow-hidden">
                     <a target="_blank" href="" className="inline-block w-full h-full">
                       <img src={item.image}
@@ -70,7 +70,7 @@ const HomeBlogCont = (props) => {
               )
             })}
           </div>
-          <a target="_blank" href="" className="absolute top-[.5vw] right-0 flex items-center justify-center text-[#1890ff] text-sm">
+          <a target="_blank" href="" className="static md:absolute top-[.5vw] right-0 flex items-center justify-center text-[#1890ff] text-sm">
             View all
             <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-[5px]"><path d="M0.957031 0.734375V0.761719C0.875 0.707031 0.792969 0.652344 0.710938 0.652344C0.601562 0.652344 0.546875 0.679688 0.492188 0.734375L0.300781 0.953125C0.21875 1.00781 0.191406 1.08984 0.191406 1.17188C0.191406 1.28125 0.21875 1.33594 0.300781 1.39062L5.63281 6.75L0.273438 12.082C0.21875 12.1641 0.191406 12.2461 0.191406 12.3281C0.191406 12.4375 0.21875 12.4922 0.273438 12.5469L0.492188 12.7656C0.546875 12.8203 0.601562 12.8477 0.710938 12.8477C0.792969 12.8477 0.875 12.8203 0.957031 12.7383L6.72656 6.99609C6.78125 6.94141 6.80859 6.85938 6.80859 6.75C6.80859 6.66797 6.78125 6.58594 6.72656 6.50391L0.957031 0.734375ZM3.99219 0.734375L3.96484 0.761719C4.01953 0.707031 4.10156 0.652344 4.21094 0.652344C4.29297 0.652344 4.375 0.707031 4.45703 0.761719L10.2266 6.53125C10.2812 6.58594 10.3086 6.66797 10.3086 6.75C10.3086 6.85938 10.2812 6.94141 10.2266 6.99609L4.45703 12.7656C4.375 12.8203 4.29297 12.8477 4.21094 12.8477C4.10156 12.8477 4.04688 12.8203 3.99219 12.7656L3.80078 12.5742C3.71875 12.5195 3.69141 12.4375 3.69141 12.3281C3.69141 12.2461 3.71875 12.1641 3.80078 12.082L9.13281 6.75L3.77344 1.41797C3.71875 1.36328 3.69141 1.28125 3.69141 1.17188C3.69141 1.08984 3.71875 1.00781 3.77344 0.953125L3.99219 0.734375Z" fill="#1890FF"></path></svg>
           </a>

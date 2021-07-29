@@ -32,13 +32,13 @@ const HomeBlogSafe = () => {
   return (
     <div className="mt-[50px]">
       <h3 className="mb-[15px] text-xl font-semibold">Du lịch an toàn thời Covid</h3>
-      <div className="flex flex-wrap mx-[-15px] px-[15px]">
+      <div className="flex mx-[-15px] px-[15px] overflow-x-auto">
         
         {safeItems.map((item) => {
           return (
-            <div className="mb-2 w-1/4">
+            <div className="md:flex-1 mb-2 md-992px:w-1/4 md:min-w-[340px] md-992px:min-w-[auto]">
               <a target="_blank" href="" className="outline-none">
-                <div className="mr-[15px]">
+                <div className="mr-[15px] w-[80vw] md:w-auto">
                   <div className="w-full h-[170px] rounded overflow-hidden">
                     <img src={item.image}
                       className="w-full h-full"
