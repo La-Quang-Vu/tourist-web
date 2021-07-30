@@ -3,7 +3,7 @@
 const MemberShip = () => {
 
   return (
-    <div className="pt-[15px] pb-5 md:py-[50px]">
+    <div className="pt-[15px] pb-[20px] md:py-[50px]">
       <div className="container2">
         <div className="py-[25px] bg-[#fafafa] mx-[-15px] flex flex-wrap items-center">
           <div className="hidden md:block md:w-1/2 px-[15px]">

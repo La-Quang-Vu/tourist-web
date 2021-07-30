@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'homeBannerV2': "url(https://statics.vntrip.vn/images/homeBannerV2.jpg)",
+        'appBox': "url(assets/images/appBox/appBox-bg.jpg)",
       }),
       width: {
         '100per-50px': 'calc(100% - 50px)',
@@ -34,8 +35,10 @@ module.exports = {
         opacityShow: 'opacityShow .3s ease 1',
       },
       fontSize: {
+        xl_20: ['20px', '30px'],
         xl_22: ['22px', '33px'],
         xl_26: ['26px', '36px'],
+        '4xl_40': ['40px', '60px'],
       }
     },
   },

@@ -7,6 +7,7 @@ import SearchBox from './SearchBox';
 import HotDeal from './HotDeal';
 import HomeBlog from './HomeBlog';
 import MemberShip from './MemberShip';
+import AppBox from './AppBox';
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
         <HotDeal />
         <HomeBlog />
         <MemberShip />
+        <AppBox />
         
       </main>
 
