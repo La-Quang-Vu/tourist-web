@@ -6,6 +6,7 @@ import ReasonCombo from './ReasonCombo';
 import SearchBox from './SearchBox';
 import HotDeal from './HotDeal';
 import HomeBlog from './HomeBlog';
+import MemberShip from './MemberShip';
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
         <ReasonCombo />
         <HotDeal />
         <HomeBlog />
+        <MemberShip />
         
       </main>
 

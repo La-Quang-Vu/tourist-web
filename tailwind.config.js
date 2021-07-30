@@ -14,6 +14,7 @@ module.exports = {
       boxShadow: {
         md2: '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
         md3: '0 2px 16px 0 rgba(0, 0, 0, 0.30)',
+        btn1: '0 2px 0 rgb(0 0 0 / 2%)',
         input1: '0 0 0 2px #D1E9FF',
       },
       backgroundImage: theme => ({
