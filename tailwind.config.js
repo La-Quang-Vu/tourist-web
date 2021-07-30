@@ -35,6 +35,7 @@ module.exports = {
         opacityShow: 'opacityShow .3s ease 1',
       },
       fontSize: {
+        xs_12_18: ['12px', '18px'],
         xl_20: ['20px', '30px'],
         xl_22: ['22px', '33px'],
         xl_26: ['26px', '36px'],
