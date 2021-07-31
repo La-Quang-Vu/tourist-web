@@ -9,11 +9,13 @@ import HomeBlog from './HomeBlog';
 import MemberShip from './MemberShip';
 import AppBox from './AppBox';
 import Footer from './Footer';
+import ChatWidget from './ChatWidget';
 
 const Home = () => {
 
   return (
     <div className="">
+      <ChatWidget />
       <Header />
       <main>
         <HomeBanner />
