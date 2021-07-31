@@ -17,6 +17,9 @@
       fill-current hover:fill-[#ff8917] focus:fill-[#ff8917]
       disabled:border-transparent disabled:bg-transparent disabled:fill-[rgba(0,0,0,.25)] disabled:cursor-not-allowed;
   }
+  .input-1 {
+    @apply w-full h-10 border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1
+  }
 }
 
 .ellipsis-multiline {

@@ -193,7 +193,7 @@ const SearchBox = () => {
                     </p>
                     <div className="relative" class="click-departure">
                       <div className="relative">
-                        <input id="departure" className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
+                        <input id="departure" className="pl-[15px] pr-[35px] input-1"
                           placeholder="Departure"
                           onFocus={()=>setSuggestDefault(true)}
                         >
@@ -266,7 +266,7 @@ const SearchBox = () => {
                     </p>
                     <div class="click-return">
                       <div className="relative">
-                        <input id="destination" className="w-full h-10 pl-[15px] pr-[35px] border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
+                        <input id="destination" className="pl-[15px] pr-[35px] input-1"
                           placeholder="Destination"
                           onClick={()=>setSuggestDefaultR(true)}
                         >
@@ -339,7 +339,7 @@ const SearchBox = () => {
                     </p>
                     <div class="click-passenger">
                       <div className="relative">
-                        <button className="w-full h-10 px-[5px] pl-[15px] pr-[30px] text-left border border-[#d9d9d9] hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 rounded outline-none focus:shadow-input1"
+                        <button className="px-[5px] pl-[15px] pr-[30px] text-left input-1"
                           onClick={() => setPassengerBox(true)}
                         >
                           <span>{adult} adult, {children} children, {infant} infant</span>

@@ -45,16 +45,16 @@ const Footer = () => {
     <div className="bg-white">
       <div className="container2">
         <div className="py-[15px] border-b border-[#d9d9d9]">
-          <p className="font-semibold mb-[15px] border-b border-[#d9d9d9] block">
+          <p className=" hidden md:block font-semibold mb-[15px] border-b border-[#d9d9d9]">
             <span className="pr-[15px] transform translate-y-1 bg-white inline-block">
             Hotels by city/province
             </span>
           </p>
-          <ul className="md:flex md:flex-wrap mx-[-5px]">
+          <ul className="hidden md:flex md:flex-wrap mx-[-5px]">
 
             {hotels.map((item) => {
               return (
-                <li className="w-1/6 px-[5px] py-[2.5px] list-item">
+                <li className=" md:w-1/4 lg-1200px:w-1/6 px-[5px] py-[2.5px] list-item">
                   <a href="" className={`text-xs_12_18 hover:underline block ${item.fontBold?'font-semibold':''}`}>
                     Hotel {item.name}
                   </a>
@@ -63,9 +63,21 @@ const Footer = () => {
             })}
             
           </ul>
+          <div className="md:hidden">
+            <select className="px-[15px] input-1 cursor-pointer">
+              <option>Hotels by city/province</option>
+
+              {hotels.map((item) => {
+                return (
+                  <option value="">{item.name}</option>
+                )
+              })}
+              
+            </select>
+          </div>
         </div>
         <div className="py-[15px] md:flex">
-          <div className="md:w-1/5">
+          <div className="hidden md:block md:w-1/5">
             <a href="" className="mb-[5px] block text-sm hover:underline">About Vntrip</a>
             <a href="" className="mb-[5px] block text-sm hover:underline">Contact</a>
             <a href="" className="mb-[5px] block text-sm hover:underline">Terms of Use</a>
@@ -76,7 +88,21 @@ const Footer = () => {
             <a href="" className="mb-[5px] block text-sm hover:underline">Vntrip cashback</a>
             <a href="" className="mb-[5px] block text-sm hover:underline">Affiliate Cooperation</a>
           </div>
-          <div className="md:w-1/5 md:px-[15px] md:py-[5px]">
+          <div className="md:hidden">
+            <select className="px-[15px] input-1 cursor-pointer">
+              <option value="">About Vntrip</option>
+              <option value="">About Vntrip</option>
+              <option value="">Contact</option>
+              <option value="">Terms of Use</option>
+              <option value="">Operation Regulation</option>
+              <option value="">Privacy Policy</option>
+              <option value="">Tourism blog</option>
+              <option value="">Recruitment</option>
+              <option value="">Vntrip cashback</option>
+              <option value="">Affiliate Cooperation</option>
+            </select>
+          </div>
+          <div className="pt-[15px] md:pt-0 flex justify-between md:block md:w-1/5 md:px-[15px] md:py-[5px]">
             <a href="" className="md:mb-[10px] block">
               <img src="../../assets/images/footer/appStore.png" alt="appStore"
                 className="w-[120px]"
@@ -88,7 +114,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          <div className="md:w-[30%] md:pr-[15px]">
+          <div className="py-[15px] md:py-0 border-b border-[#d9d9d9] md:border-none md:w-[30%] md:pr-[15px]">
             <p className="mb-[5px] font-semibold text-sm">VNTRIP Co Ltd.,.</p>
             <p className="mb-[5px] font-semibold text-sm">Floor 2, Building 17T4 Hapulico Complex</p>
             <p className="mb-[5px] text-sm">1 Nguyen Huy Tuong Str., Thanh Xuan Dist., Hanoi</p>
@@ -105,7 +131,7 @@ const Footer = () => {
               <a href="tel:096 326 6688" className="font-semibold text-[#389e0d] hover:underline">096 326 6688</a>
             </p>
           </div>
-          <div className="md:w-[30%]">
+          <div className="pt-[15px] md:pt-0 md:w-[30%]">
             <p className="mb-[15px] text-sm">
             Subscribe now to receive coupons, promotions &amp; secret deals:
             </p>
@@ -113,7 +139,7 @@ const Footer = () => {
               <div className="flex-1">
                 <div>
                   <input type="text" placeholder="Your Email" name="email"
-                    className="w-full h-10 border rounded px-[15px] text-sm hover:border-[#48ABFD] focus:border-[#48ABFD] transition-all duration-300 outline-none focus:shadow-input1"
+                    className="px-[15px] text-sm input-1"
                   ></input>
                 </div>
               </div>
