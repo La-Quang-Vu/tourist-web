@@ -88,14 +88,14 @@ const SearchBox = () => {
         <div className=" rounded-b bg-white shadow-md2">
           <div className="md:px-[15px] md:pb-[30px] md:pt-5">
             <div>
-              <div className="pb-4">
-                <p className="font-semibold md-992px:mx-3 lg-1200px:mx-0 md-992px:mb-3 lg-1200px:mb-[10px]">
+              <div className="md-992px:pb-4">
+                <p className="hidden md-992px:block font-semibold md-992px:mx-3 lg-1200px:mx-0 md-992px:mb-3 lg-1200px:mb-[10px]">
                   Please choose package type you need?
                 </p>
-                <div className="md-992px:-mx-3 lg-1200px:-mx-4 flex items-center">
-                  <div className=" md-992px:mx-3 lg-1200px:mx-4 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#ff8917] bg-[#fff7e6] w-1/3 cursor-pointer">
-                    <div className="flex items-center">
-                      <div className="w-10 mr-[10px]">
+                <div className="mx-4 md-992px:-mx-3 lg-1200px:-mx-4 md-992px:flex items-center">
+                  <div className="combo-box border-[#d9d9d9] bg-[#fff] md-992px:border-[#ff8917] md-992px:bg-[#fff7e6] mb-4 md-992px:mb-0 md-992px:cursor-pointer">
+                    <div className="md-992px:flex items-center">
+                      <div className="hidden md-992px:block w-10 mr-[10px]">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                           <path d="M35.6348 36.2524C29.5059 41.2489 10.369 41.2489 4.36525 36.2524C-1.76358 31.2559 -1.1382 9.89592 4.36525 4.27487C9.86869 -1.34618 30.1313 -1.34618 35.6348 4.27487C41.1382 9.89592 41.7636 31.256 35.6348 36.2524Z" fill="#F5222D"></path>
                           <path d="M20.125 27.5088C14.6216 31.8807 8.49275 34.1291 2.73919 34.254C-1.5135 27.0091 -0.637915 9.39652 4.36521 4.27513C8.86801 -0.346602 23.0018 -1.22103 31.1319 1.65194C33.1331 9.89618 29.0056 20.3887 20.125 27.5088Z" fill="#FF4D4F"></path>
@@ -106,9 +106,9 @@ const SearchBox = () => {
                           </defs>
                         </svg>
                       </div>
-                      <div>
+                      <div className="mb-3 md-992px:mb-0">
                         <div className="flex items-center justify-between">
-                          <p className="text-sm lg-1200px:text-base font-semibold text-[#ff8917] mr-[5px]">
+                          <p className="title-combo md-992px:text-[#ff8917]">
                           Combo 1.999k
                           </p>
                         </div>
@@ -116,11 +116,14 @@ const SearchBox = () => {
                         Return flight + hotel – Same price for all selected destination
                         </p>
                       </div>
+                      <button className="btn-combo" >
+                        1.999k Combo
+                      </button>
                     </div>
                   </div>
-                  <div className=" md-992px:mx-3 lg-1200px:mx-4 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3 cursor-pointer">
-                    <div className="flex items-center">
-                      <div className="w-10 mr-[10px]">
+                  <div className="combo-box border-[#d9d9d9] bg-white mb-4 md-992px:mb-0 md-992px:cursor-pointer">
+                    <div className="md-992px:flex items-center">
+                      <div className="hidden md-992px:block w-10 mr-[10px]">
                         <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M36.3277 36.7524C30.1989 41.7489 11.062 41.7489 5.05824 36.7524C-1.07058 31.7559 -0.445203 10.3959 5.05824 4.77487C10.5617 -0.84618 30.8243 -0.84618 36.3277 4.77487C41.8312 10.3959 42.4566 31.756 36.3277 36.7524Z" fill="#FF8917"></path>
                           <path d="M20.818 28.0088C15.3146 32.3807 9.18574 34.6291 3.43218 34.754C-0.820506 27.5091 0.055078 9.89652 5.0582 4.77513C9.56101 0.153398 23.6948 -0.721026 31.8249 2.15194C33.8261 10.3962 29.6986 20.8887 20.818 28.0088Z" fill="#EEEEEE" fill-opacity="0.16"></path>
@@ -137,9 +140,9 @@ const SearchBox = () => {
                           <path d="M18.2964 14.9886C16.9774 14.8925 16.049 14.8445 15.5111 14.8445C15.3639 14.8445 15.2486 14.8861 15.1654 14.9694C15.0757 15.059 15.0309 15.1775 15.0309 15.3247L15.0309 16.1891C15.652 16.0611 16.1962 15.997 16.6637 15.997L17.336 15.997C17.7714 15.997 18.1203 16.1283 18.3828 16.3908C18.6454 16.6533 18.7766 17.0023 18.7766 17.4377L18.7766 18.6863C18.7766 19.2689 18.6293 19.7011 18.3348 19.9828C18.0403 20.271 17.5793 20.415 16.9518 20.415L15.127 20.415C14.4995 20.415 14.0385 20.271 13.7439 19.9828C13.4494 19.7011 13.3021 19.2689 13.3021 18.6863L13.3021 15.3247C13.3021 14.6972 13.4494 14.2362 13.7439 13.9417C14.0385 13.6472 14.4995 13.4999 15.127 13.4999C16.0042 13.4999 17.0606 13.5639 18.2964 13.692L18.2964 14.9886ZM16.1834 17.3416C15.8185 17.3416 15.4343 17.3737 15.0309 17.4377L15.0309 18.4942C15.0309 18.8783 15.223 19.0704 15.6072 19.0704L16.4716 19.0704C16.8557 19.0704 17.0478 18.8783 17.0478 18.4942L17.0478 17.6778C17.0478 17.5818 17.0158 17.5017 16.9518 17.4377C16.8878 17.3737 16.8077 17.3416 16.7117 17.3416L16.1834 17.3416Z" fill="white"></path>
                         </svg>
                       </div>
-                      <div>
+                      <div className="mb-3 md-992px:mb-0">
                         <div className="flex items-center">
-                          <p className="text-sm lg-1200px:text-base font-semibold text-[#595959] mr-[5px]">
+                          <p className="title-combo md-992px:text-[#595959]">
                             2.699k Vinpearl Combo
                           </p>
                           <p className="bg-[#f5222d] px-[10px] rounded-[100px] font-bold text-white text-sm">HOT</p>
@@ -148,11 +151,14 @@ const SearchBox = () => {
                           Return flight + hotel – Same price for all selected destination
                         </p>
                       </div>
+                      <button className="btn-combo" >
+                        Select Vinpearl Combo
+                      </button>
                     </div>
                   </div>
-                  <div className="md-992px:mx-3 lg-1200px:mx-4 px-3 py-[5px] md-992px:max-h-[90px] lg-1200px:max-h-full rounded border border-[#d9d9d9] bg-white w-1/3 cursor-pointer">
-                    <div className="flex items-center">
-                      <div className="w-10 mr-[10px]">
+                  <div className="combo-box border-[#d9d9d9] bg-white md-992px:cursor-pointer">
+                    <div className="md-992px:flex items-center">
+                      <div className="hidden md-992px:block w-10 mr-[10px]">
                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M36.3276 36.393C30.1988 41.3895 11.0619 41.3895 5.05812 36.393C-1.0707 31.3965 -0.445325 10.0365 5.05812 4.41549C10.5616 -1.20555 30.8242 -1.20555 36.3276 4.41549C41.8311 10.0365 42.4564 31.3966 36.3276 36.393Z" fill="#1890FF"></path>
                           <path d="M20.8178 27.6494C15.3143 32.0213 9.1855 34.2698 3.43194 34.3947C-0.82075 27.1497 0.0548339 9.53715 5.05796 4.41576C9.56076 -0.205977 23.6946 -1.0804 31.8247 1.79257C33.8259 10.0368 29.6983 20.5294 20.8178 27.6494Z" fill="#40A9FF"></path>
@@ -170,9 +176,9 @@ const SearchBox = () => {
                           <path d="M16.4805 14.5049C15.1119 14.4052 14.1486 14.3554 13.5906 14.3554C13.4378 14.3554 13.3182 14.3986 13.2318 14.485C13.1388 14.578 13.0923 14.7009 13.0923 14.8537L13.0923 15.7505C13.7367 15.6177 14.3014 15.5512 14.7864 15.5512L15.484 15.5512C15.9357 15.5512 16.2978 15.6874 16.5702 15.9598C16.8426 16.2322 16.9788 16.5943 16.9788 17.046L16.9788 18.3415C16.9788 18.9461 16.826 19.3945 16.5204 19.6868C16.2148 19.9858 15.7364 20.1353 15.0854 20.1353L13.192 20.1353C12.5409 20.1353 12.0626 19.9858 11.757 19.6868C11.4514 19.3945 11.2986 18.9461 11.2986 18.3415L11.2986 14.8537C11.2986 14.2026 11.4514 13.7243 11.757 13.4187C12.0626 13.1131 12.5409 12.9603 13.192 12.9603C14.1021 12.9603 15.1983 13.0267 16.4805 13.1596L16.4805 14.5049ZM14.2881 16.9464C13.9095 16.9464 13.5108 16.9796 13.0923 17.046L13.0923 18.1422C13.0923 18.5408 13.2916 18.7401 13.6902 18.7401L14.5871 18.7401C14.9857 18.7401 15.185 18.5408 15.185 18.1422L15.185 17.2952C15.185 17.1955 15.1518 17.1125 15.0854 17.046C15.0189 16.9796 14.9359 16.9464 14.8362 16.9464L14.2881 16.9464Z" fill="white"></path>
                         </svg>
                       </div>
-                      <div>
+                      <div className="mb-3 md-992px:mb-0">
                         <div className="flex items-center">
-                          <p className="text-sm lg-1200px:text-base font-semibold text-[#595959] mr-[5px]">
+                          <p className="title-combo md-992px:text-[#595959]">
                           Return flight from 1.700k
                           </p>
                           <p className="bg-[#f5222d] px-[10px] rounded-[100px] font-bold text-white text-sm">HOT</p>
@@ -181,11 +187,14 @@ const SearchBox = () => {
                         Hunt flight tickets with fix budget. Return flights to every destination only from 1.700k
                         </p>
                       </div>
+                      <button className="btn-combo" >
+                        Hunt return flight
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="hidden md-992px:block">
                 <div className="mb-4  md-992px:-mx-3 lg-1200px:-mx-4 flex items-center">
                   <div className="md-992px:mx-3 lg-1200px:mx-4 w-1/3">
                     <p className="mb-[5px] font-semibold">
