@@ -2,7 +2,7 @@
 const ReasonCombo = () => {
   
   return (
-    <div className="mt-[70px] mb-10">
+    <div className="hidden md:block mt-[70px] mb-10">
       <div className="container2">
         <div className="mb-6 text-center">
           <p className="text-2xl font-semibold">
