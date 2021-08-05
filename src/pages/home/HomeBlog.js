@@ -161,7 +161,7 @@ const HomeBlog = () => {
   ]
 
   return (
-    <div className="mt-[50px]">
+    <div className="mt-[20px] md:mt-[50px]">
       <div className="container2">
 
         <HomeBlogCont itemMain={festivalItemMain} itemList={festivalItemCards}/>
