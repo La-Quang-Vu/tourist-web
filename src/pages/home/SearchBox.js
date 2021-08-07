@@ -48,6 +48,29 @@ const SearchBox = () => {
     setSuggestDefaultR(false);
   }
 
+  const selectPlaces = (value) => {
+    const items = placeList.filter((item) => {
+      return item.indexOf(value) > -1
+    })
+
+    if (items.length > 0) return items;
+    else return placeList;
+  }
+
+  const placeList = [
+    "Hà Nội",
+    "Hải Phòng",
+    "Nha Trang",
+    "Đà Lạt",
+    "Đà Nẵng",
+    "Quảng Bình",
+    "Quy Nhơn",
+    "TP Hồ Chí Minh",
+    "Phú Quốc"
+  ]
+
+  const [filterPlaces,setFilterPlaces] = useState(placeList)
+
   return (
     <div id="searchBox" className="mt-[0] md:mt-[-100px] md:mb-10">
       <div className="container2">
@@ -220,6 +243,7 @@ const SearchBox = () => {
                         <input id="departure" className="pl-[15px] pr-[35px] input-1"
                           placeholder="Departure"
                           onFocus={()=>setSuggestDefault(true)}
+                          onChange={(evt) => { setFilterPlaces(selectPlaces(evt.target.value))}}
                         >
                         </input>
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -232,51 +256,15 @@ const SearchBox = () => {
                           <div className="md:w-full">
                             <div className="md:max-h-[249px]">
                               <ul className="flex py-[5px] flex-wrap">
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Hà Nội")}
-                                  >Hà Nội</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Hải Phòng")}
-                                  >Hải Phòng</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Nha Trang")}
-                                  >Nha Trang</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Đà Lạt")}
-                                  >Đà Lạt</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Đà Nẵng")}
-                                  >Đà Nẵng</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Quảng Bình")}
-                                  >Quảng Bình</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Quy Nhơn")}
-                                  >Quy Nhơn</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("TP Hồ Chí Minh")}
-                                  >TP Hồ Chí Minh</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDepartureValue("Phú Quốc")}
-                                  >Phú Quốc</button>
-                                </li>
+                                {filterPlaces.map((item) => {
+                                  return (
+                                    <li className="w-1/2">
+                                      <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
+                                        onClick = {()=>setDepartureValue(item)}
+                                      >{item}</button>
+                                    </li>
+                                  )
+                                })}
                               </ul>
                             </div>
                           </div>

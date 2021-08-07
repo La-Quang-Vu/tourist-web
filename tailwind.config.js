@@ -18,7 +18,7 @@ module.exports = {
         input1: '0 0 0 2px #D1E9FF',
       },
       backgroundImage: theme => ({
-        'homeBannerV2': "url(https://statics.vntrip.vn/images/homeBannerV2.jpg)",
+        'homeBannerV2': "url(assets/images/homeBannerV2.jpg)",
         'appBox': "url(assets/images/appBox/appBox-bg.jpg)",
       }),
       width: {
