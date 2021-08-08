@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { removeAccents } from '../../services/convert';
 
 const SearchBox = () => {
 
@@ -49,7 +50,9 @@ const SearchBox = () => {
   }
 
   const selectPlaces = (value) => {
+    value = removeAccents(value).toUpperCase();
     const items = placeList.filter((item) => {
+      item = removeAccents(item).toUpperCase();
       return item.indexOf(value) > -1
     })
 
@@ -242,7 +245,7 @@ const SearchBox = () => {
                       <div className="relative">
                         <input id="departure" className="pl-[15px] pr-[35px] input-1"
                           placeholder="Departure"
-                          onFocus={()=>setSuggestDefault(true)}
+                          onFocus={()=>{setSuggestDefault(true); setFilterPlaces(placeList)}}
                           onChange={(evt) => { setFilterPlaces(selectPlaces(evt.target.value))}}
                         >
                         </input>
