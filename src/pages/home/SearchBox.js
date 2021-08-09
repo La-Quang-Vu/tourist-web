@@ -8,6 +8,7 @@ const SearchBox = () => {
   const [passengerBox,setPassengerBox] = useState(false)
 
   const [needCorrectPlace,setNeedCorrectPlace] = useState(false)
+  const [needCorrectPlaceR,setNeedCorrectPlaceR] = useState(false)
 
   const [adult,setAdult] = useState(2)
   const [children,setChildren] = useState(0)
@@ -41,12 +42,21 @@ const SearchBox = () => {
 
   useEffect(()=>{
     if (!suggestDefault && needCorrectPlace) {
-      correctPlace()
+      correctPlace("departure")
     }
     if (suggestDefault) {
       setNeedCorrectPlace(true)
     }
   },[suggestDefault])
+  
+  useEffect(()=>{
+    if (!suggestDefaultR && needCorrectPlaceR) {
+      correctPlace("destination")
+    }
+    if (suggestDefaultR) {
+      setNeedCorrectPlaceR(true)
+    }
+  },[suggestDefaultR])
 
   const setDepartureValue = (str) => {
     const element = document.getElementById("departure");
@@ -56,7 +66,6 @@ const SearchBox = () => {
   const setDestinationValue = (str) => {
     const element = document.getElementById("destination");
     element.value = str;
-    setSuggestDefaultR(false);
   }
 
   const selectPlaces = (value) => {
@@ -70,8 +79,8 @@ const SearchBox = () => {
     else return placeList;
   }
 
-  const correctPlace = () => {
-    const element = document.getElementById("departure");
+  const correctPlace = (elementId) => {
+    const element = document.getElementById(elementId);
     let value = element.value;
 
     let place = "";
@@ -82,7 +91,8 @@ const SearchBox = () => {
       if (id == -1) place = filterPlaces[0];
       else place = filterPlaces[id];
     }
-    setDepartureValue(place);
+
+    element.value = place;
   }
 
   const placeList = [
@@ -272,6 +282,7 @@ const SearchBox = () => {
                           placeholder="Departure"
                           onFocus={()=>{setSuggestDefault(true); setFilterPlaces(placeList)}}
                           onChange={(evt) => { setFilterPlaces(selectPlaces(evt.target.value))}}
+                          autoComplete="off"
                         >
                         </input>
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -308,7 +319,8 @@ const SearchBox = () => {
                       <div className="relative">
                         <input id="destination" className="pl-[15px] pr-[35px] input-1"
                           placeholder="Destination"
-                          onClick={()=>setSuggestDefaultR(true)}
+                          onClick={()=>{setSuggestDefaultR(true);setFilterPlaces(placeList)}}
+                          onChange={(evt) => { setFilterPlaces(selectPlaces(evt.target.value))}}
                         >
                         </input>
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -321,51 +333,15 @@ const SearchBox = () => {
                           <div className="md:w-full">
                             <div className="md:max-h-[249px]">
                               <ul className="flex py-[5px] flex-wrap">
-                              <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Hà Nội")}
-                                  >Hà Nội</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Hải Phòng")}
-                                  >Hải Phòng</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Nha Trang")}
-                                  >Nha Trang</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Đà Lạt")}
-                                  >Đà Lạt</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Đà Nẵng")}
-                                  >Đà Nẵng</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Quảng Bình")}
-                                  >Quảng Bình</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Quy Nhơn")}
-                                  >Quy Nhơn</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("TP Hồ Chí Minh")}
-                                  >TP Hồ Chí Minh</button>
-                                </li>
-                                <li className="w-1/2">
-                                  <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                    onClick = {()=>setDestinationValue("Phú Quốc")}
-                                  >Phú Quốc</button>
-                                </li>
+                                {filterPlaces.map((item) => {
+                                  return (
+                                    <li className="w-1/2">
+                                      <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
+                                        onClick = {()=>{setDestinationValue(item);setSuggestDefaultR(false);setNeedCorrectPlaceR(false)}}
+                                      >{item}</button>
+                                    </li>
+                                  )
+                                })}
                               </ul>
                             </div>
                           </div>

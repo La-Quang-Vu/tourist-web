@@ -140,6 +140,7 @@ const Footer = () => {
                 <div>
                   <input type="text" placeholder="Your Email" name="email"
                     className="px-[15px] text-sm input-1"
+                    autoComplete="off"
                   ></input>
                 </div>
               </div>
