@@ -7,6 +7,8 @@ const SearchBox = () => {
   const [suggestDefaultR,setSuggestDefaultR] = useState(false)
   const [passengerBox,setPassengerBox] = useState(false)
 
+  const [needCorrectPlace,setNeedCorrectPlace] = useState(false)
+
   const [adult,setAdult] = useState(2)
   const [children,setChildren] = useState(0)
   const [infant,setInfant] = useState(0)
@@ -37,10 +39,18 @@ const SearchBox = () => {
     checkClickEvent();
   },[])
 
+  useEffect(()=>{
+    if (!suggestDefault && needCorrectPlace) {
+      correctPlace()
+    }
+    if (suggestDefault) {
+      setNeedCorrectPlace(true)
+    }
+  },[suggestDefault])
+
   const setDepartureValue = (str) => {
     const element = document.getElementById("departure");
     element.value = str;
-    setSuggestDefault(false);
   }
 
   const setDestinationValue = (str) => {
@@ -58,6 +68,21 @@ const SearchBox = () => {
 
     if (items.length > 0) return items;
     else return placeList;
+  }
+
+  const correctPlace = () => {
+    const element = document.getElementById("departure");
+    let value = element.value;
+
+    let place = "";
+    value = value.replace(/\s+/g, ' ')
+                 .trim();
+    if (value !== "") {
+      let id = filterPlaces.indexOf(value);
+      if (id == -1) place = filterPlaces[0];
+      else place = filterPlaces[id];
+    }
+    setDepartureValue(place);
   }
 
   const placeList = [
@@ -263,7 +288,7 @@ const SearchBox = () => {
                                   return (
                                     <li className="w-1/2">
                                       <button className="px-[15px] py-[10px] w-full text-left hover:text-[#ff8917] transition-all duration-200"
-                                        onClick = {()=>setDepartureValue(item)}
+                                        onClick = {()=>{setDepartureValue(item);setSuggestDefault(false);setNeedCorrectPlace(false)}}
                                       >{item}</button>
                                     </li>
                                   )
