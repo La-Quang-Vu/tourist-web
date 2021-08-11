@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { removeAccents } from '../../services/convert';
 
-const ComboSamePrice = () => {
+const SamePriceCombo = () => {
 
   const [suggestDefault,setSuggestDefault] = useState(false)
   const [suggestDefaultR,setSuggestDefaultR] = useState(false)
@@ -315,4 +315,4 @@ const ComboSamePrice = () => {
   )
 }
 
-export default ComboSamePrice;
+export default SamePriceCombo;
