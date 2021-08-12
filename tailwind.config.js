@@ -44,6 +44,7 @@ module.exports = {
       },
       fontFamily: {
         SVN_Bulgary: ['SVN-Bulgary', 'serif'],
+        Open_Sans: ['"Open Sans"','sans-serif'],
       }
     },
   },

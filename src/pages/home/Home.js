@@ -14,7 +14,7 @@ import ChatWidget from './ChatWidget';
 const Home = () => {
 
   return (
-    <div className="">
+    <div className=" font-Open_Sans">
       <ChatWidget />
       <Header />
       <main>

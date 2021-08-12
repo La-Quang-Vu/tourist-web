@@ -47,7 +47,7 @@ const Header = () => {
                   </svg>
                 </a>
               </h1>
-              <ul className="flex items-center">
+              <ul className="flex items-center text-sm">
                 <li className="px-2.5">
                   <a href="" className="flex items-center hover:underline">
                     <svg width="10" height="10" version="1.1" x="0px" y="0px" viewBox="0 0 511.999 511.999">
@@ -57,8 +57,7 @@ const Header = () => {
                               c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z">
                       </path>
                     </svg>
-                    &nbsp;
-                    Manage your order
+                    &nbsp;Manage your order
                   </a>
                 </li>
                 <li className="px-2.5">
@@ -76,13 +75,13 @@ const Header = () => {
                     onMouseEnter={()=>setMoneyArea(true)}
                     onMouseLeave={()=>setMoneyArea(false)}
                   >
-                    <button className="flex items-center hover:text-[#FF8962]"
+                    <button className="flex items-center hover:text-[#FF8962] pr-[15px] relative"
                       onClick={()=>setMoneyMenu(!moneyMenu)}
                       onBlur={()=>{if (!moneyArea) setMoneyMenu(false)}}
                     >
                       <span className="font-semibold">{money}</span>
                       <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="ml-1"
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2"
                       >
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
                       </svg>
@@ -119,7 +118,7 @@ const Header = () => {
                     onMouseEnter={()=>setLanguageArea(true)}
                     onMouseLeave={()=>setLanguageArea(false)}
                   >
-                    <button className="flex items-center hover:text-[#FF8962]"
+                    <button className="flex items-center hover:text-[#FF8962] pr-[15px] relative"
                       onClick={()=>setLanguageMenu(!languageMenu)}
                       onBlur={()=>{if (!languageArea) setLanguageMenu(false)}}
                     >
@@ -174,7 +173,7 @@ const Header = () => {
                       
                       <span className="font-semibold ml-[10px]">{language}</span>
                       <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="ml-1"
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2"
                       >
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48532 0.242641L4.24268 4.12306L3.51667e-05 0.242641L8.48532 0.242641Z" fill="#878787"></path>
                       </svg>
@@ -249,11 +248,11 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="pl-2.5">
-                  <div className="block">
-                    <button className="border border-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-[#ff8917] font-semibold text-sm">
+                  <div className="block text-xs">
+                    <button className="border border-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-[#ff8917] font-semibold">
                       <span>Sign in</span>
                     </button>
-                    <button className="border border-[#ff8917] bg-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-white font-semibold text-sm">
+                    <button className="border border-[#ff8917] bg-[#ff8917] rounded w-[123px] min-h-[32px] ml-[15px] text-white font-semibold">
                       <span>Sign up</span>
                     </button>
                   </div>
@@ -265,7 +264,7 @@ const Header = () => {
             <div className=" border-b border-[#d9d9d9]">
               <div className="lg-1200px:w-[1170px] md-992px:w-[970px] md:w-[750px] mx-auto px-[15px]">
                 <nav className="">
-                  <ul className="flex h-[60px]">
+                  <ul className="flex h-[60px] text-xs">
                     <li className="flex-1 border-t-2 border-[#ff8917]">
                       <a href="" className="h-full flex items-center justify-center font-semibold text-[#ff8917] fill-[#ff8917] transition-all duration-200">
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="inherit" xmlns="http://www.w3.org/2000/svg">
