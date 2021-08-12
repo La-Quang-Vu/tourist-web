@@ -41,6 +41,9 @@ module.exports = {
         xl_22: ['22px', '33px'],
         xl_26: ['26px', '36px'],
         '4xl_40': ['40px', '60px'],
+      },
+      fontFamily: {
+        SVN_Bulgary: ['SVN-Bulgary', 'serif'],
       }
     },
   },
